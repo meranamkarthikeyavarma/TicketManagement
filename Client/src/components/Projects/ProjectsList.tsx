@@ -19,7 +19,6 @@ const ProjectsList: React.FC<ProjectsListProps> = ({ user, onLogout }) => {
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [newProjectName, setNewProjectName] = useState('');
-  const [parentProject, setParentProject] = useState('Project1');
   const [openMenuId, setOpenMenuId] = useState<string | null>(null);
   const [deleteConfirm, setDeleteConfirm] = useState<string | null>(null);
   const menuRef = useRef<HTMLDivElement>(null);
