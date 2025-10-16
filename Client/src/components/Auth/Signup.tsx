@@ -5,7 +5,7 @@ interface SignupProps {
   onLogin: (user: any) => void;
 }
 
-const Signup: React.FC<SignupProps> = ({ onLogin }) => {
+const Signup: React.FC<SignupProps> = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
