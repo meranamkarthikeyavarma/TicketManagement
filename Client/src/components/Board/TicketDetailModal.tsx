@@ -37,7 +37,7 @@ const TicketDetailModal: React.FC<TicketDetailModalProps> = ({ ticket, onClose, 
 
   const fetchComments = async () => {
     try {
-      const response = await fetch(`http://localhost:4000/api/tickets/${ticket.id}/comments`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/tickets/${ticket.id}/comments`);
       const data = await response.json();
       setComments(data || []);
     } catch (error) {
@@ -51,7 +51,7 @@ const handleAddComment = async () => {
 
   setSubmitting(true);
   try {
-    const response = await fetch(`http://localhost:4000/api/tickets/${ticket.id}/comments`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/tickets/${ticket.id}/comments`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
