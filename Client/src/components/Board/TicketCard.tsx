@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MoreVertical, MessageSquare, AlertCircle, ArrowRight, Trash2 } from 'lucide-react';
+import { MoreVertical, MessageSquare, ArrowRight, Trash2 } from 'lucide-react';
 
 interface Ticket {
   id: string;
