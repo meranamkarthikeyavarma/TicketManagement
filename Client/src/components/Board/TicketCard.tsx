@@ -9,6 +9,7 @@ interface Ticket {
   status: 'OPEN' | 'IN_PROGRESS' | 'CLOSED';
   reporter: string;
   commentCount: number;
+  createdAt: string;
 }
 
 interface TicketCardProps {
