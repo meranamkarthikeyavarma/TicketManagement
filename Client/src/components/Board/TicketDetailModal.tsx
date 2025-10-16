@@ -30,6 +30,7 @@ const TicketDetailModal: React.FC<TicketDetailModalProps> = ({ ticket, onClose, 
   const [loading, setLoading] = useState(true);
   const [commentAuthor, setCommentAuthor] = useState('');
   const [submitting, setSubmitting] = useState(false);
+  const TicketDetailModal: React.FC<TicketDetailModalProps> = ({ ticket, onClose, currentUser: _currentUser }) => {
 
   useEffect(() => {
     fetchComments();
