@@ -23,6 +23,7 @@ const ProjectsList: React.FC<ProjectsListProps> = ({ user, onLogout }) => {
   const [deleteConfirm, setDeleteConfirm] = useState<string | null>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+  const parentProject = 'Project1';
 
   useEffect(() => {
     fetchProjects();
