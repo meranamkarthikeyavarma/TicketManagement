@@ -18,6 +18,7 @@ const CreateTicketModal: React.FC<CreateTicketModalProps> = ({
   const [description, setDescription] = useState('');
   const [priority, setPriority] = useState<'LOW' | 'MEDIUM' | 'HIGH'>('MEDIUM');
   const [assignee, setAssignee] = useState('');
+  const _reporter = reporter;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
