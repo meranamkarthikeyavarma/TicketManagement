@@ -24,13 +24,12 @@ interface TicketDetailModalProps {
   currentUser: string;
 }
 
-const TicketDetailModal: React.FC<TicketDetailModalProps> = ({ ticket, onClose, currentUser }) => {
+const TicketDetailModal: React.FC<TicketDetailModalProps> = ({ ticket, onClose, currentUser: _currentUser  }) => {
   const [comments, setComments] = useState<Comment[]>([]);
   const [newComment, setNewComment] = useState('');
   const [loading, setLoading] = useState(true);
   const [commentAuthor, setCommentAuthor] = useState('');
   const [submitting, setSubmitting] = useState(false);
-  const TicketDetailModal: React.FC<TicketDetailModalProps> = ({ ticket, onClose, currentUser: _currentUser }) => {
 
   useEffect(() => {
     fetchComments();
