@@ -39,7 +39,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ user, onLogout }) => {
 
   const fetchProjectName = async () => {
     try {
-      const response = await fetch(`http://localhost:4000/api/projects/Project1`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/projects/Project1`);
       const data = await response.json();
       const project = data.projects?.find((p: any) => p.id === projectId);
       if (project) setProjectName(project.name);
@@ -50,7 +50,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ user, onLogout }) => {
 
   const fetchTickets = async () => {
     try {
-      const response = await fetch(`http://localhost:4000/api/tickets?projectId=${projectId}`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/tickets?projectId=${projectId}`);
       const data = await response.json();
       setTickets(data.items || []);
     } catch (error) {
@@ -62,7 +62,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ user, onLogout }) => {
 
   const handleCreateTicket = async (ticketData: any) => {
     try {
-      const response = await fetch('http://localhost:4000/api/tickets', {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/tickets`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -83,7 +83,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ user, onLogout }) => {
 
   const handleUpdateTicket = async (ticketId: string, updates: any) => {
     try {
-      const response = await fetch(`http://localhost:4000/api/tickets/${ticketId}`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/tickets/${ticketId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updates)
@@ -101,7 +101,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ user, onLogout }) => {
     if (!confirm('Are you sure you want to delete this ticket?')) return;
 
     try {
-      const response = await fetch(`http://localhost:4000/api/tickets/${ticketId}`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/tickets/${ticketId}`, {
         method: 'DELETE'
       });
 
