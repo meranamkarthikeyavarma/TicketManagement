@@ -42,7 +42,7 @@ const ProjectsList: React.FC<ProjectsListProps> = ({ user, onLogout }) => {
 
   const fetchProjects = async () => {
     try {
-      const response = await fetch(`http://localhost:4000/api/projects/${parentProject}`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/projects/${parentProject}`);
       const data = await response.json();
       setProjects(data.projects || []);
     } catch (error) {
@@ -55,7 +55,7 @@ const ProjectsList: React.FC<ProjectsListProps> = ({ user, onLogout }) => {
   const handleCreateProject = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:4000/api/projects', {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/projects`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: newProjectName, parentProject })
@@ -74,7 +74,7 @@ const ProjectsList: React.FC<ProjectsListProps> = ({ user, onLogout }) => {
 
   const handleDeleteProject = async (projectId: string) => {
     try {
-      const response = await fetch(`http://localhost:4000/api/projects/${projectId}`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/projects/${projectId}`, {
         method: 'DELETE'
       });
 
