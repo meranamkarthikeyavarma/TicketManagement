@@ -12,6 +12,7 @@ interface Ticket {
   priority: 'LOW' | 'MEDIUM' | 'HIGH';
   status: 'OPEN' | 'IN_PROGRESS' | 'CLOSED';
   reporter: string;
+  assignee?: string;
   commentCount: number;
   createdAt: string;
 }
