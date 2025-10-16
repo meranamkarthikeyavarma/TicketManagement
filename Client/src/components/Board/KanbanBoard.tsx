@@ -223,6 +223,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ user, onLogout }) => {
         <TicketDetailModal
           ticket={selectedTicket}
           onClose={handleCloseDetail}
+          currentUser={user}  
         />
       )}
     </div>
